@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HMA Service Learning</title>
+    <title>HMA · Service Learning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,245 +16,491 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
+            background: linear-gradient(135deg, #fff0f5, #e6f7ff);
+            color: #1a1a2e;
         }
 
-        .container {
-            max-width: 440px;
-            width: 100%;
-        }
-
-        .card {
+        .navbar {
             background: white;
-            border-radius: 32px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 0.5rem;
         }
 
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .logo-box {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
             color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        .logo-text h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .logo-text p {
-            font-size: 0.875rem;
-            color: #64748b;
-        }
-
-        h1 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #0f172a;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-btn {
-            flex: 1;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            padding: 0.875rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            background: white;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #1e293b;
-            cursor: pointer;
-            transition: all 0.2s;
+            font-weight: 800;
         }
 
-        .social-btn:hover {
-            background: #f8fafc;
-            border-color: #94a3b8;
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #ff6b6b;
         }
 
-        .divider {
-            text-align: center;
-            margin: 1.5rem 0;
-            color: #94a3b8;
-            font-size: 0.875rem;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
 
-        .input-group {
-            margin-bottom: 1.25rem;
-        }
-
-        label {
-            display: block;
-            font-size: 0.875rem;
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a6a;
             font-weight: 600;
-            color: #334155;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b6b;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: #ff6b6b;
+            color: white;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #16213e;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: #ff6b6b;
+            display: block;
+            font-size: 2rem;
+        }
+
+        .hero p {
+            color: #4a4a6a;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ff6b6b;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #ff6b6b;
+        }
+
+        .stats-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #fff0f5;
+            border-radius: 20px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ff6b6b;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #16213e;
             margin-bottom: 0.5rem;
         }
 
-        input {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            font-size: 0.95rem;
-            background: #f8fafc;
+        .section-subtitle {
+            text-align: center;
+            color: #4a4a6a;
+            margin-bottom: 3rem;
         }
 
-        input:focus {
-            outline: none;
-            border-color: #2563eb;
+        .cycle-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .cycle-card {
             background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.15);
+            transition: 0.3s;
         }
 
-        .options {
+        .cycle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cycle-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cycle-card h3 {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.15);
+        }
+
+        .project-image {
+            height: 150px;
+            background: linear-gradient(45deg, #ffb6c1, #ffdab9);
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin: 1.25rem 0 1.5rem;
-            font-size: 0.875rem;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
         }
 
-        .remember {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #475569;
-        }
-
-        .forgot {
-            color: #2563eb;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 0.875rem;
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            border: none;
-            border-radius: 16px;
+        .project-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ff6b6b;
             color: white;
-            font-size: 1rem;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #16213e;
+            margin-bottom: 0.5rem;
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .toolkit-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.1);
+        }
+
+        .toolkit-item h4 {
+            color: #16213e;
+            margin-bottom: 0.3rem;
+        }
+
+        .toolkit-item p {
+            color: #4a4a6a;
+            font-size: 0.9rem;
+        }
+
+        .download {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
-            margin-bottom: 1.5rem;
         }
 
-        .signup {
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.1);
+        }
+
+        .faq-item h4 {
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border-radius: 40px;
+            padding: 3rem;
             text-align: center;
-            font-size: 0.875rem;
-            color: #64748b;
+            color: white;
+            margin-top: 3rem;
         }
 
-        .signup a {
-            color: #2563eb;
-            font-weight: 600;
-            text-decoration: none;
+        .contact-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
-        .footer {
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
             margin-top: 2rem;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #94a3b8;
         }
 
-        .footer a {
-            color: #64748b;
+        .contact-info div {
+            background: rgba(255,255,255,0.2);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+        }
+
+        footer {
+            background: #16213e;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-grid h4 {
+            color: #ff8e8e;
+            margin-bottom: 1rem;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-grid a {
+            color: #ddd;
             text-decoration: none;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #334;
+            text-align: center;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .cycle-grid, .gallery-grid, .faq-grid, .toolkit-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon">HMA</div>
-                <div class="logo-text">
-                    <h2>Haile Manas Academy</h2>
-                    <p>Service Learning Portal</p>
-                </div>
+                <div class="logo-box">HMA</div>
+                <div class="logo-text">Service Learning</div>
             </div>
-
-            <h1>Welcome back</h1>
-
-            <div class="social-buttons">
-                <button class="social-btn" onclick="alert('Google Sign In')">
-                    <svg width="20" height="20" viewBox="0 0 24 24">
-                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                    </svg>
-                    Google
-                </button>
-                <button class="social-btn" onclick="alert('Apple Sign In')">
-                    <svg width="20" height="20" viewBox="0 0 24 24">
-                        <path fill="black" d="M17.05 20.28c-.98.95-2.05.88-3.08.38-1.09-.52-2.08-.54-3.22 0-1.43.68-2.19.5-3.05-.38C2.79 15.26 3.51 7.6 8.05 7.23c1.34.07 2.29.74 3.08.8.96-.15 1.88-.74 2.94-.69 1.34.07 2.42.62 3.1 1.56-2.83 1.71-2.12 5.37.44 6.59-.45 1.2-1.02 2.38-1.56 2.79zM12.03 7.25c-.23-2.67 2.08-4.06 2.68-4.25.64 2.44-1.84 4.06-2.68 4.25z"/>
-                    </svg>
-                    Apple
-                </button>
+            <div class="nav-links">
+                <a href="#start">Start</a>
+                <a href="#gallery">Projects</a>
+                <a href="#toolkit">Toolkit</a>
+                <a href="#faq">FAQ</a>
             </div>
+        </div>
+    </nav>
 
-            <div class="divider">or continue with email</div>
-
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter your email">
+    <div class="hero">
+        <div>
+            <span class="hero-badge">⚡ ELEMENTARY SERVICE LEARNING</span>
+            <h1>Little Hands.<span>Big Impact.</span></h1>
+            <p>A central hub for service learning at Haile Manas Academy.</p>
+            <div class="hero-buttons">
+                <a href="#start" class="btn-primary">Start Here</a>
+                <a href="#gallery" class="btn-outline">Projects</a>
             </div>
+        </div>
+        <div class="stats-box">
+            <div class="stat-item"><div class="stat-number">156</div><div>Projects</div></div>
+            <div class="stat-item"><div class="stat-number">12</div><div>Partners</div></div>
+            <div class="stat-item"><div class="stat-number">520+</div><div>Hours</div></div>
+            <div class="stat-item"><div class="stat-number">4</div><div>Grades</div></div>
+        </div>
+    </div>
 
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" placeholder="Enter your password">
+    <div id="start" class="section">
+        <h2 class="section-title">Start Here</h2>
+        <p class="section-subtitle">The Service Cycle: Inquiry, Planning, Action, Reflection</p>
+        <div class="cycle-grid">
+            <div class="cycle-card"><div class="cycle-icon">🔍</div><h3>Inquiry</h3><p>Ask questions, explore your community.</p></div>
+            <div class="cycle-card"><div class="cycle-icon">📋</div><h3>Planning</h3><p>Make a step-by-step plan.</p></div>
+            <div class="cycle-card"><div class="cycle-icon">⚡</div><h3>Action</h3><p>Put your plan to work.</p></div>
+            <div class="cycle-card"><div class="cycle-icon">💭</div><h3>Reflection</h3><p>Think about what you learned.</p></div>
+        </div>
+    </div>
+
+    <div id="gallery" class="section">
+        <h2 class="section-title">Project Gallery</h2>
+        <p class="section-subtitle">Real projects by HMA students</p>
+        <div class="gallery-grid">
+            <div class="project-card">
+                <div class="project-image">📚<span class="project-tag">Grade 2</span></div>
+                <div class="project-content"><h3>Reading Buddies</h3><p>Reading with kindergarteners.</p></div>
             </div>
-
-            <div class="options">
-                <label class="remember">
-                    <input type="checkbox"> Remember me
-                </label>
-                <a href="#" class="forgot">Forgot password?</a>
+            <div class="project-card">
+                <div class="project-image">🌱<span class="project-tag">Grade 3</span></div>
+                <div class="project-content"><h3>School Garden</h3><p>Growing vegetables.</p></div>
             </div>
-
-            <button class="login-btn" onclick="alert('Sign In Successful')">Sign In</button>
-
-            <div class="signup">
-                Don't have an account? <a href="#">Sign up</a>
-            </div>
-
-            <div class="footer">
-                <a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a>
+            <div class="project-card">
+                <div class="project-image">🧸<span class="project-tag">Grade 1</span></div>
+                <div class="project-content"><h3>Toy Drive</h3><p>150 toys collected.</p></div>
             </div>
         </div>
     </div>
+
+    <div id="toolkit" class="section">
+        <h2 class="section-title">Student Toolkit</h2>
+        <p class="section-subtitle">Resources for your project</p>
+        <div class="toolkit-grid">
+            <div class="toolkit-item"><div><h4>📋 Project Planner</h4><p>Step-by-step worksheet</p></div><button class="download" onclick="alert('Downloading')">Get</button></div>
+            <div class="toolkit-item"><div><h4>✅ Safety Checklist</h4><p>Stay safe</p></div><button class="download" onclick="alert('Downloading')">Get</button></div>
+            <div class="toolkit-item"><div><h4>📄 Permission Form</h4><p>For parents</p></div><button class="download" onclick="alert('Downloading')">Get</button></div>
+            <div class="toolkit-item"><div><h4>📓 Reflection Journal</h4><p>Write about it</p></div><button class="download" onclick="alert('Downloading')">Get</button></div>
+        </div>
+    </div>
+
+    <div id="faq" class="section">
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-subtitle">Common questions</p>
+        <div class="faq-grid">
+            <div class="faq-item"><h4>How long?</h4><p>2-4 weeks</p></div>
+            <div class="faq-item"><h4>Work with friends?</h4><p>Yes! Teams of 2-4</p></div>
+            <div class="faq-item"><h4>Who approves?</h4><p>Your teacher</p></div>
+            <div class="faq-item"><h4>Need help?</h4><p>Email us</p></div>
+        </div>
+        <div class="contact-box">
+            <h2>Get in Touch</h2>
+            <p>We're here to help!</p>
+            <div class="contact-info">
+                <div>📧 service@hma.edu.et</div>
+                <div>📞 +251 11 123 4567</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div><h4>HMA</h4><ul><li>About</li><li>Mission</li></ul></div>
+            <div><h4>Program</h4><ul><li>Start Here</li><li>Projects</li></ul></div>
+            <div><h4>Resources</h4><ul><li>Toolkit</li><li>FAQ</li></ul></div>
+            <div><h4>Contact</h4><ul><li>Email</li><li>Phone</li></ul></div>
+        </div>
+        <div class="copyright">
+            © 2026 Haile Manas Academy · Fikremarkos Belay, Grade 9
+        </div>
+    </footer>
 </body>
 </html>
